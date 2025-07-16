@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "./Button";
 import TimeDisplay from "./TimeDisplay";
 
-function Timer({ startTime }) {
+function Timer({ startTime, onComplete }) {
   const [remaining, setRemaining] = useState(startTime);
   const [isRunning, setRunning] = useState(false);
 
@@ -45,6 +45,7 @@ function Timer({ startTime }) {
           onClick={play}
         />
       )}
+      <Button icon="trash" label="Delete" onClick={onComplete} />
     </section>
   );
 }
